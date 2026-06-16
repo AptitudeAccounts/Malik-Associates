@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,32 +53,48 @@ font-weight:bold;
 }
 
 .hero{
-background:linear-gradient(rgba(0,51,102,0.92),rgba(0,51,102,0.92));
-color:white;
-padding:120px 20px;
+height:90vh;
+background:
+linear-gradient(rgba(0,51,102,.75),rgba(0,51,102,.75)),
+url('hero.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
 text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+max-width:1000px;
+animation:fadeIn 2s;
 }
 
 .hero h2{
 font-size:60px;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:22px;
-max-width:1000px;
-margin:auto;
 }
 
-.button{
+.btn{
 display:inline-block;
 margin-top:30px;
-padding:16px 35px;
+padding:15px 35px;
 background:#d4af37;
 color:#003366;
-font-weight:bold;
 text-decoration:none;
+font-weight:bold;
 border-radius:8px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
 }
 
 .section{
@@ -85,31 +103,29 @@ margin:auto;
 padding:80px 20px;
 }
 
-.section h2{
+.section-title{
 text-align:center;
-margin-bottom:30px;
 color:#003366;
-font-size:38px;
-}
-
-.section p{
-text-align:center;
-max-width:1000px;
-margin:auto;
+font-size:40px;
+margin-bottom:40px;
 }
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
-margin-top:40px;
 }
 
 .card{
 background:white;
 padding:30px;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card h3{
@@ -121,10 +137,9 @@ margin-bottom:15px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:25px;
-margin-top:40px;
 }
 
-.stat-box{
+.stat{
 background:#003366;
 color:white;
 padding:35px;
@@ -132,7 +147,7 @@ border-radius:15px;
 text-align:center;
 }
 
-.stat-box h2{
+.stat h2{
 font-size:45px;
 color:#d4af37;
 }
@@ -141,8 +156,8 @@ color:#d4af37;
 background:white;
 padding:30px;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
 margin-top:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 font-style:italic;
 }
 
@@ -154,8 +169,20 @@ padding:80px 20px;
 }
 
 .cta h2{
-margin-bottom:20px;
 font-size:42px;
+margin-bottom:20px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
 footer{
@@ -165,19 +192,18 @@ text-align:center;
 padding:30px;
 }
 
-@media(max-width:900px){
-
-.stats{
-grid-template-columns:repeat(2,1fr);
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
 }
-
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @media(max-width:768px){
-
-header h1{
-font-size:32px;
-}
 
 .hero h2{
 font-size:36px;
@@ -187,13 +213,13 @@ font-size:36px;
 font-size:18px;
 }
 
+.stats{
+grid-template-columns:1fr;
+}
+
 nav a{
 display:block;
 margin:10px;
-}
-
-.stats{
-grid-template-columns:1fr;
 }
 
 }
@@ -227,52 +253,76 @@ Trusted Financial Partner for Compliance, Growth & Advisory Excellence
 
 <section class="hero">
 
-<h2>Building Financial Confidence.<br>Driving Business Success.</h2>
+<div class="hero-content">
+
+<h2>
+Building Financial Confidence.<br>
+Driving Business Success.
+</h2>
 
 <p>
-At Malik Associates, we believe every successful business deserves a trusted financial partner. We help organizations make informed decisions, strengthen financial performance, and achieve sustainable growth through professional expertise and personalized attention.
+At Malik Associates, we believe every successful business deserves a trusted financial partner.
+We help organizations make informed decisions, strengthen financial performance,
+and achieve sustainable growth through professional expertise and personalized attention.
 </p>
 
-<a href="contact.html" class="button">
+<a href="contact.html" class="btn">
 Schedule a Consultation
 </a>
 
+</div>
+
 </section>
 
 <section class="section">
 
-<h2>More Than Accountants. Trusted Business Advisors.</h2>
+<h2 class="section-title">
+More Than Accountants. Trusted Business Advisors.
+</h2>
 
-<p>
-Malik Associates is a forward-thinking professional firm committed to helping businesses navigate financial challenges and seize new opportunities. We combine technical expertise, industry knowledge, and a client-first approach to deliver solutions that create long-term value.
+<p style="text-align:center;max-width:1000px;margin:auto;">
+Malik Associates is a forward-thinking professional firm committed to helping businesses navigate financial challenges and seize new opportunities.
+We combine technical expertise, industry knowledge, and a client-first approach to deliver solutions that create long-term value.
 </p>
 
 </section>
 
 <section class="section">
 
-<h2>Why Businesses Choose Malik Associates</h2>
+<h2 class="section-title">
+Why Businesses Choose Malik Associates
+</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>✓ Commitment to Excellence</h3>
-<p>Delivering quality, accuracy and professional standards in every engagement.</p>
+<h3>Commitment to Excellence</h3>
+<p>Delivering quality and professionalism in every engagement.</p>
 </div>
 
 <div class="card">
-<h3>✓ Integrity & Transparency</h3>
-<p>Building relationships based on trust, ethics and accountability.</p>
+<h3>Integrity & Transparency</h3>
+<p>Building long-term relationships based on trust.</p>
 </div>
 
 <div class="card">
-<h3>✓ Personalized Relationships</h3>
-<p>Tailored solutions aligned with your unique business objectives.</p>
+<h3>Personalized Relationships</h3>
+<p>Solutions tailored to your business goals.</p>
 </div>
 
 <div class="card">
-<h3>✓ Reliable Support</h3>
-<p>Responsive guidance and ongoing support whenever you need it.</p>
+<h3>Reliable Support</h3>
+<p>Responsive guidance whenever you need it.</p>
+</div>
+
+<div class="card">
+<h3>Industry Expertise</h3>
+<p>Serving businesses across multiple sectors.</p>
+</div>
+
+<div class="card">
+<h3>Long-Term Focus</h3>
+<p>Helping clients achieve sustainable growth.</p>
 </div>
 
 </div>
@@ -281,58 +331,28 @@ Malik Associates is a forward-thinking professional firm committed to helping bu
 
 <section class="section">
 
-<h2>Our Vision & Mission</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Our Vision</h3>
-
-<p>
-To be recognized as a leading professional advisory firm known for excellence, innovation and lasting client relationships.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Our Mission</h3>
-
-<p>
-To deliver trusted professional guidance that helps businesses make confident decisions, achieve sustainable growth and create long-term success.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>By The Numbers</h2>
+<h2 class="section-title">By The Numbers</h2>
 
 <div class="stats">
 
-<div class="stat-box">
+<div class="stat">
 <h2>10+</h2>
 <p>Years Experience</p>
 </div>
 
-<div class="stat-box">
+<div class="stat">
 <h2>500+</h2>
 <p>Clients Served</p>
 </div>
 
-<div class="stat-box">
-<h2>99%</h2>
-<p>Client Satisfaction</p>
+<div class="stat">
+<h2>20+</h2>
+<p>Industries Supported</p>
 </div>
 
-<div class="stat-box">
-<h2>Multi</h2>
-<p>Industries Supported</p>
+<div class="stat">
+<h2>23</h2>
+<p>Team Members</p>
 </div>
 
 </div>
@@ -341,10 +361,37 @@ To deliver trusted professional guidance that helps businesses make confident de
 
 <section class="section">
 
-<h2>Client Success Stories</h2>
+<h2 class="section-title">Vision & Mission</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Our Vision</h3>
+<p>
+To be recognized as a leading professional advisory firm known for excellence,
+innovation and lasting client relationships.
+</p>
+</div>
+
+<div class="card">
+<h3>Our Mission</h3>
+<p>
+To deliver trusted professional guidance that helps businesses make confident decisions,
+achieve sustainable growth and create long-term success.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">Client Success Stories</h2>
 
 <div class="testimonial">
-"Malik Associates consistently provides exceptional guidance and support. Their professionalism and dedication have been instrumental in our growth."
+"Malik Associates consistently provides exceptional guidance and support.
+Their professionalism and dedication have been instrumental in our growth."
 </div>
 
 <div class="testimonial">
@@ -358,12 +405,13 @@ To deliver trusted professional guidance that helps businesses make confident de
 <h2>Your Success Starts With The Right Partner</h2>
 
 <p>
-At Malik Associates, we are committed to helping businesses build stronger foundations, make smarter decisions and create a future of sustainable success.
+At Malik Associates, we are committed to helping businesses build stronger foundations,
+make smarter decisions and create a future of sustainable success.
 </p>
 
 <br>
 
-<a href="contact.html" class="button">
+<a href="contact.html" class="btn">
 Contact Us Today
 </a>
 
@@ -384,6 +432,10 @@ Contact Us Today
 <p>© 2026 Malik Associates. All Rights Reserved.</p>
 
 </footer>
+
+<a href="https://wa.me/971558605398" class="whatsapp">
+WhatsApp Us
+</a>
 
 </body>
 </html>
