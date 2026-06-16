@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Malik Associates</title>
+
+<meta name="description" content="Malik Associates provides Accounting, Bookkeeping, VAT, Payroll and Business Advisory Services in the UAE.">
 
 <style>
 
-body{
-font-family:Arial,sans-serif;
+*{
 margin:0;
 padding:0;
-background:#f5f7fa;
+box-sizing:border-box;
 }
 
-header{<img src="logo.png" width="120">
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fa;
+color:#333;
+}
+
+header{
 background:#003366;
 color:white;
-padding:20px;
 text-align:center;
+padding:30px;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
 }
 
 nav{
@@ -28,53 +49,109 @@ text-align:center;
 nav a{
 color:white;
 text-decoration:none;
-margin:15px;
+margin:0 20px;
 font-weight:bold;
 }
 
+nav a:hover{
+text-decoration:underline;
+}
+
 .hero{
-padding:30px 20px;
+padding:60px 20px;
+text-align:center;
 }
 
 .hero h2{
-font-size:36px;
+font-size:48px;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
-max-width:800px;
+font-size:20px;
+max-width:900px;
 margin:auto;
+line-height:1.6;
 }
 
 .btn{
 display:inline-block;
+margin-top:30px;
 background:#003366;
 color:white;
-padding:12px 25px;
+padding:15px 30px;
 text-decoration:none;
 border-radius:5px;
-margin-top:20px;
+font-weight:bold;
 }
 
-.services{
-padding:40px;
+.section{
+padding:50px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:15px 0;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.service-box{
-background:white;
-padding:20px;
-margin:15px;
-border-radius:8px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+.contact-box{
+text-align:center;
+line-height:2;
+font-size:18px;
 }
 
 footer{
 background:#003366;
 color:white;
 text-align:center;
-padding:20px;
+padding:30px;
 margin-top:40px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+z-index:999;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:30px;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+nav a{
+display:block;
+margin:10px 0;
+}
+
 }
 
 </style>
@@ -84,15 +161,23 @@ margin-top:40px;
 <body>
 
 <header>
+
 <h1>Malik Associates</h1>
+
 <p>Professional Accounting & Financial Services</p>
+
 </header>
 
 <nav>
+
 <a href="index.html">Home</a>
+
 <a href="about.html">About Us</a>
+
 <a href="services.html">Services</a>
+
 <a href="contact.html">Contact</a>
+
 </nav>
 
 <div class="hero">
@@ -100,40 +185,108 @@ margin-top:40px;
 <h2>Your Trusted Financial Partner</h2>
 
 <p>
+
 Malik Associates provides professional accounting,
 bookkeeping, VAT, payroll, taxation and business advisory
 services to help businesses grow with confidence.
+
 </p>
 
-<a href="contact.html" class="btn">Contact Us</a>
+<a href="contact.html" class="btn">
+
+Book a Consultation
+
+</a>
 
 </div>
 
-<div class="services">
+<div class="section">
 
 <h2>Our Core Services</h2>
 
-<div class="service-box">
+<div class="card">
 Accounting & Bookkeeping
 </div>
 
-<div class="service-box">
+<div class="card">
 VAT Registration & Filing
 </div>
 
-<div class="service-box">
+<div class="card">
 Payroll Management
 </div>
 
-<div class="service-box">
+<div class="card">
 Business Advisory
 </div>
 
 </div>
 
+<div class="section">
+
+<h2>Why Choose Malik Associates?</h2>
+
+<div class="card">
+Experienced Accounting Professionals
+</div>
+
+<div class="card">
+Reliable VAT & Tax Compliance
+</div>
+
+<div class="card">
+Affordable & Transparent Pricing
+</div>
+
+<div class="card">
+Dedicated Client Support
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Contact Us</h2>
+
+<div class="contact-box">
+
+<p>📧 CEO@malikassociates.com</p>
+
+<p>📞 +971 55 860 5398</p>
+
+<p>📍 Abu Dhabi, UAE</p>
+
+</div>
+
+</div>
+
 <footer>
-© 2026 Malik Associates. All Rights Reserved.
+
+<h3>Malik Associates</h3>
+
+<p>
+
+Professional Accounting, Taxation,
+Bookkeeping and Business Advisory Services
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 Malik Associates.
+All Rights Reserved.
+
+</p>
+
 </footer>
+
+<a href="https://wa.me/971501234567" class="whatsapp">
+
+WhatsApp
+
+</a>
 
 </body>
 </html>
