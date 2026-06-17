@@ -1,378 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>About Us | Malik Associates</title>
-
+<meta name="description" content="Learn about Malik Associates (CMAs & CAs) -- our vision, mission, and the leadership team driving accounting, audit, tax and advisory excellence across Pakistan and the UAE.">
+<meta name="theme-color" content="#003366">
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root{
+  --navy:#003366;
+  --navy-dark:#001f3f;
+  --navy-deep:#00264d;
+  --navy-soft:#0b4c87;
+  --gold:#D4AF37;
+  --gold-light:#e6c965;
+  --gold-pale:#f7efd6;
+  --white:#ffffff;
+  --bg-soft:#f6f8fb;
+  --bg-soft-2:#eef1f7;
+  --text-dark:#16212e;
+  --text-muted:#5b6878;
+  --text-on-navy:#dce6f0;
+  --border-soft:#e3e7ee;
+  --shadow-sm:0 2px 10px rgba(0,38,77,0.08);
+  --shadow-md:0 10px 28px rgba(0,38,77,0.14);
+  --shadow-lg:0 18px 46px rgba(0,38,77,0.20);
+  --radius-sm:6px;
+  --radius-md:12px;
+  --radius-lg:20px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --wa-green:#25D366;
+  --wa-green-dark:#1ebd5c;
+  --font-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --header-h:84px;
 }
 
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
-font-family:Arial,sans-serif;
-background:#f5f7fa;
-color:#333;
-line-height:1.7;
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--text-dark);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--navy);
+  margin:0 0 0.5em;
+  font-weight:600;
+  letter-spacing:0.2px;
+}
+p{margin:0 0 1em;color:var(--text-muted);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{margin:0;padding:0;}
+button{font-family:var(--font-body);cursor:pointer;}
+.container{
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px;
+}
+section{scroll-margin-top:var(--header-h);}
+
+/* ---------- Visually hidden / skip link ---------- */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;
+  background:var(--navy);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:2000;
+}
+.skip-link:focus{left:0;top:0;}
+
+/* ---------- Focus visibility ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:2px;
+  border-radius:4px;
 }
 
-header{
-background:#003366;
-color:white;
-text-align:center;
-padding:40px 20px;
+/* ---------- Eyebrow / section heading ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-body);
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";display:inline-block;width:28px;height:2px;background:var(--gold);
+}
+.section-head{
+  max-width:680px;
+  margin:0 auto 48px;
+  text-align:center;
+}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);}
+.section-head p{font-size:1.02rem;}
+.section-head.left{margin:0 0 40px;text-align:left;}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,0.97);
+  border-bottom:1px solid var(--border-soft);
+  height:var(--header-h);
+  transition:box-shadow .25s var(--ease), height .25s var(--ease);
+}
+.site-header.scrolled{box-shadow:var(--shadow-md);}
+.header-inner{
+  max-width:1180px;margin:0 auto;padding:0 24px;
+  height:100%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;
+}
+.brand{
+  display:flex;align-items:center;gap:14px;
+  min-width:0;
+}
+.brand-logo{
+  width:56px;height:56px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--navy);
+  flex-shrink:0;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+.brand-logo img{width:100%;height:100%;object-fit:cover;display:block;}
+.brand-logo .logo-fallback{
+  display:none;
+  font-family:var(--font-display);
+  font-weight:700;color:var(--gold);font-size:1.3rem;letter-spacing:0.5px;
+}
+.brand-text{min-width:0;}
+.brand-text .brand-name{
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,2.4vw,1.55rem);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.1;
+  white-space:nowrap;
+}
+.brand-text .brand-sub{
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:block;
+  margin-top:2px;
+}
+.brand-text .brand-tagline{
+  display:none;
+  font-size:0.78rem;
+  color:var(--text-muted);
+  margin-top:2px;
 }
 
-header img{
-width:120px;
-margin-bottom:15px;
+.main-nav ul{
+  display:flex;align-items:center;gap:6px;list-style:none;
+}
+.main-nav a{
+  display:inline-block;
+  padding:10px 16px;
+  font-size:0.93rem;
+  font-weight:600;
+  color:var(--navy);
+  border-radius:8px;
+  position:relative;
+  transition:color .2s var(--ease), background .2s var(--ease);
+}
+.main-nav a::after{
+  content:"";
+  position:absolute;left:16px;right:16px;bottom:6px;
+  height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .25s var(--ease);
+}
+.main-nav a:hover{background:var(--bg-soft);}
+.main-nav a:hover::after,
+.main-nav a.active::after{transform:scaleX(1);}
+.main-nav a.active{color:var(--navy);}
+
+.nav-toggle{
+  display:none;
+  width:44px;height:44px;
+  border:1px solid var(--border-soft);
+  border-radius:8px;
+  background:var(--white);
+  align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after{display:none;}
+.nav-toggle .bars{
+  position:relative;width:20px;height:14px;display:block;
+}
+.nav-toggle .bars span{
+  display:block;position:absolute;left:0;right:0;height:2px;background:var(--navy);
+  transition:transform .25s var(--ease), opacity .2s var(--ease);
+}
+.nav-toggle .bars span:nth-child(1){top:0;}
+.nav-toggle .bars span:nth-child(2){top:6px;}
+.nav-toggle .bars span:nth-child(3){top:12px;}
+.nav-toggle.open .bars span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.nav-toggle.open .bars span:nth-child(2){opacity:0;}
+.nav-toggle.open .bars span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 28px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:0.95rem;
+  border:2px solid transparent;
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.btn-gold{
+  background:var(--gold);color:var(--navy-dark);
+  box-shadow:0 8px 22px rgba(212,175,55,0.35);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(212,175,55,0.45);}
+.btn-outline{
+  background:transparent;color:var(--white);border-color:rgba(255,255,255,0.45);
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.btn-navy{
+  background:var(--navy);color:var(--white);
+  box-shadow:0 8px 22px rgba(0,38,77,0.25);
+}
+.btn-navy:hover{transform:translateY(-2px);background:var(--navy-dark);}
+
+/* =========================================================
+   GENERIC CARD COMPONENTS (reused across pages)
+   ========================================================= */
+.office-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;
+}
+.office-card{
+  background:var(--bg-soft);
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius-md);
+  padding:24px 22px;
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+}
+.office-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-sm);
+  border-color:var(--gold-light);
+}
+.office-card .office-tag{
+  display:inline-block;
+  font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
+}
+.office-card h3{font-size:1.05rem;margin-bottom:8px;}
+.office-card p{font-size:0.9rem;margin:0;}
+
+.contact-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:var(--radius-md);
+  padding:26px 22px;
+  text-align:center;
+  transition:transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+}
+.contact-card:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,0.1);
+  border-color:var(--gold);
+}
+.contact-card .ci{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--gold);color:var(--navy-dark);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;
+}
+.contact-card .ci svg{width:22px;height:22px;}
+.contact-card h4{color:var(--white);font-size:1rem;margin-bottom:6px;}
+.contact-card a, .contact-card p{color:var(--text-on-navy);font-size:0.92rem;margin:0;word-break:break-word;}
+.contact-card a:hover{color:var(--gold-light);text-decoration:underline;}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer{
+  background:var(--navy-dark);
+  color:var(--text-on-navy);
+  padding:48px 0 24px;
+}
+.footer-grid{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:30px;flex-wrap:wrap;
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+.footer-brand .brand-name{
+  font-family:var(--font-display);
+  color:var(--white);font-size:1.3rem;font-weight:700;
+}
+.footer-brand .brand-sub{
+  display:block;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--gold);margin-top:3px;
+}
+.footer-brand p{
+  margin-top:14px;max-width:340px;font-size:0.88rem;color:var(--text-on-navy);opacity:0.85;
+}
+.footer-links{display:flex;gap:48px;flex-wrap:wrap;}
+.footer-col h5{
+  color:var(--white);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:14px;font-family:var(--font-body);font-weight:700;
+}
+.footer-col ul{list-style:none;display:grid;gap:10px;}
+.footer-col a{font-size:0.88rem;color:var(--text-on-navy);opacity:0.9;transition:color .2s var(--ease);}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-bottom{
+  padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  font-size:0.82rem;color:var(--text-on-navy);opacity:0.75;
+}
+.footer-bottom .credentials{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================= */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:900;
+  display:flex;align-items:center;gap:10px;
+  background:var(--wa-green);color:#fff;
+  padding:14px 20px;border-radius:50px;
+  font-weight:700;font-size:0.92rem;
+  box-shadow:0 10px 24px rgba(0,0,0,0.22);
+  transition:transform .2s var(--ease), background .2s var(--ease);
+}
+.wa-float:hover{background:var(--wa-green-dark);transform:translateY(-3px);}
+.wa-float svg{width:20px;height:20px;flex-shrink:0;}
+
+/* =========================================================
+   SHARED RESPONSIVE (header / footer / buttons)
+   ========================================================= */
+@media (max-width:1024px){
+  .office-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:860px){
+  .main-nav{
+    position:fixed;
+    top:var(--header-h);left:0;right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--border-soft);
+    box-shadow:var(--shadow-md);
+    transform:translateY(-12px);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .22s var(--ease), transform .22s var(--ease), visibility .22s;
+    z-index:999;
+  }
+  .main-nav.open{
+    opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;
+  }
+  .main-nav ul{
+    flex-direction:column;align-items:stretch;gap:2px;padding:14px;
+  }
+  .main-nav a{padding:14px 16px;border-radius:8px;}
+  .main-nav a::after{display:none;}
+  .main-nav a.active{background:var(--gold-pale);}
+  .nav-toggle{display:flex;}
+  .brand-text .brand-tagline{display:none;}
+  .office-grid{grid-template-columns:1fr;}
+}
+@media (max-width:680px){
+  :root{--header-h:74px;}
+  .brand-logo{width:46px;height:46px;border-radius:8px;}
+  .brand-text .brand-name{font-size:1.05rem;}
+  .footer-grid{flex-direction:column;}
+  .footer-links{gap:30px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition-duration:0.001ms !important; animation-duration:0.001ms !important;}
+  html{scroll-behavior:auto;}
 }
 
-header h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-header h3{
-color:#d4af37;
-margin-bottom:10px;
-}
-
-nav{
-background:#002244;
-padding:15px;
-text-align:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-weight:bold;
-}
-
-nav a:hover{
-text-decoration:underline;
-}
 
 .hero{
-background:white;
-padding:60px 20px;
-text-align:center;
+  position:relative;
+  background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 52%,var(--navy-soft) 100%);
+  color:var(--white);
+  padding:80px 0 86px;
+  overflow:hidden;
 }
-
-.hero h2{
-font-size:42px;
-color:#003366;
-margin-bottom:15px;
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 14% 22%, rgba(212,175,55,0.16) 0, transparent 42%),radial-gradient(circle at 88% 78%, rgba(212,175,55,0.10) 0, transparent 38%);
+  pointer-events:none;
 }
-
-.container{
-max-width:1300px;
-margin:auto;
-padding:40px 20px;
+.hero-grid-lines{
+  position:absolute;inset:0;opacity:0.08;pointer-events:none;
+  background-image:linear-gradient(var(--gold) 1px, transparent 1px),linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+  background-size:64px 64px;
 }
+.hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center;}
+.hero-rule{width:64px;height:3px;background:var(--gold);margin:0 auto 24px;border-radius:2px;}
+.hero h1{color:var(--white);font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.15;margin-bottom:18px;}
+.hero p.lead{color:var(--text-on-navy);font-size:clamp(1rem,1.6vw,1.14rem);max-width:620px;margin:0 auto;}
 
-.card{
-background:white;
-padding:30px;
-margin-bottom:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+/* ---------- Who We Are / Vision / Mission ---------- */
+.values{padding:90px 0 30px;background:var(--white);}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.value-card{
+  background:var(--bg-soft);
+  border-top:3px solid var(--gold);
+  border-radius:var(--radius-md);
+  padding:30px 26px;
 }
+.value-card h3{font-size:1.15rem;margin-bottom:12px;}
+.value-card p{font-size:0.94rem;margin-bottom:10px;}
+.value-card p:last-child{margin-bottom:0;}
 
-.card h2{
-color:#003366;
-margin-bottom:15px;
-}
-
+/* ---------- Leadership team ---------- */
+.team-section{padding:70px 0 96px;background:var(--white);}
 .team-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-margin-top:30px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;margin-top:10px;
 }
-
 .team-card{
-background:transparent;
-border-radius:20px;
-text-align:center;
-cursor:pointer;
-perspective:1600px;
-height:460px;
+  background:transparent;
+  border-radius:var(--radius-lg);
+  text-align:center;
+  cursor:pointer;
+  perspective:1600px;
+  height:440px;
 }
-
-.team-card:hover .team-card-inner{
-transform:translateY(-6px) rotateY(0deg);
-}
-
-.team-card.flipped:hover .team-card-inner{
-transform:translateY(-6px) rotateY(180deg);
-}
-
+.team-card:hover .team-card-inner{transform:translateY(-6px) rotateY(0deg);}
+.team-card.flipped:hover .team-card-inner{transform:translateY(-6px) rotateY(180deg);}
 .team-card-inner{
-position:relative;
-width:100%;
-height:100%;
-transition:transform .6s cubic-bezier(.4,.2,.2,1);
-transform-style:preserve-3d;
+  position:relative;width:100%;height:100%;
+  transition:transform .6s cubic-bezier(.4,.2,.2,1);
+  transform-style:preserve-3d;
 }
-
-.team-card.flipped .team-card-inner{
-transform:rotateY(180deg);
+.team-card.flipped .team-card-inner{transform:rotateY(180deg);}
+.team-card-front,.team-card-back{
+  position:absolute;inset:0;
+  backface-visibility:hidden;
+  border-radius:var(--radius-lg);
+  background:var(--white);
+  box-shadow:var(--shadow-md);
+  border-top:4px solid var(--navy);
+  padding:24px;
+  display:flex;flex-direction:column;align-items:center;
 }
-
-.team-card-front,
 .team-card-back{
-position:absolute;
-inset:0;
-backface-visibility:hidden;
-border-radius:20px;
-background:#fff;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-border-top:5px solid #003366;
-padding:25px;
-display:flex;
-flex-direction:column;
-align-items:center;
+  transform:rotateY(180deg);
+  text-align:left;
+  border-top:4px solid var(--gold);
+  overflow-y:auto;
 }
-
-.team-card-back{
-transform:rotateY(180deg);
-text-align:left;
-border-top:5px solid #d4af37;
-overflow-y:auto;
-}
-
 .team-card img{
-width:150px;
-height:150px;
-object-fit:cover;
-border-radius:50%;
-border:5px solid #003366;
-margin-bottom:14px;
-flex-shrink:0;
+  width:128px;height:128px;object-fit:cover;border-radius:50%;
+  border:4px solid var(--navy);margin-bottom:14px;flex-shrink:0;
 }
-
-.team-card h3{
-font-family:'Cormorant Garamond',Georgia,serif;
-font-size:21px;
-font-weight:700;
-color:#003366;
-margin-bottom:6px;
+.team-card h3{font-size:1.18rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.team-card-back h3{font-size:1.05rem;text-align:center;width:100%;}
+.team-card .designation{
+  font-weight:700;color:var(--gold);font-size:0.74rem;letter-spacing:0.06em;
+  text-transform:uppercase;margin-bottom:12px;display:block;text-align:center;
 }
-
-.team-card-back h3{
-font-size:18px;
-text-align:center;
-width:100%;
-}
-
-.designation{
-font-weight:bold;
-color:#d4af37;
-font-size:13px;
-letter-spacing:.3px;
-text-transform:uppercase;
-margin-bottom:12px;
-display:block;
-text-align:center;
-}
-
-.team-card-back .designation{
-margin-bottom:14px;
-}
-
-.short-profile{
-font-size:14px;
-color:#555;
-line-height:1.55;
-margin-bottom:auto;
-}
-
-.flip-hint{
-margin-top:14px;
-font-size:12.5px;
-color:#003366;
-font-weight:600;
-opacity:.75;
-}
-
+.short-profile{font-size:0.86rem;color:var(--text-muted);line-height:1.55;margin-bottom:auto;}
+.flip-hint{margin-top:12px;font-size:0.74rem;color:var(--navy);font-weight:600;opacity:0.75;}
 .edu-block{
-background:#f6f8fb;
-border-left:3px solid #d4af37;
-padding:10px 12px;
-border-radius:8px;
-margin-bottom:14px;
-font-size:13.5px;
+  background:var(--bg-soft);border-left:3px solid var(--gold);
+  padding:9px 11px;border-radius:8px;margin-bottom:12px;font-size:0.8rem;
 }
+.edu-block strong{color:var(--navy);}
+.edu-pending{color:#a08a3e;font-style:italic;}
+.team-card-back ul{padding-left:18px;font-size:0.8rem;}
+.team-card-back li{margin-bottom:7px;color:var(--text-dark);}
 
-.edu-block strong{
-color:#003366;
+@media (max-width:1024px){
+  .value-grid{grid-template-columns:1fr;}
 }
-
-.edu-pending{
-color:#a08a3e;
-font-style:italic;
-}
-
-.partner-details{
-margin:0;
-padding:0;
-}
-
-.partner-details ul{
-padding-left:18px;
-font-size:13.5px;
-}
-
-.partner-details li{
-margin-bottom:8px;
-color:#444;
-}
-
-footer{
-background:#003366;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
-}
-
-@media(max-width:768px){
-
-header h1{
-font-size:30px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-nav a{
-display:block;
-margin:10px;
-}
-
-.team-card{
-height:500px;
-}
-
-.team-card img{
-width:120px;
-height:120px;
-}
-
-.short-profile{
-font-size:13px;
-}
-
+@media (max-width:680px){
+  .team-card{height:480px;}
+  .team-card img{width:96px;height:96px;}
 }
 
 </style>
-
 </head>
-
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
-<header>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Malik Associates &mdash; Home">
+      <span class="brand-logo">
+        <img src="Logo.jpeg" alt="Malik Associates logo">
+        <span class="logo-fallback">MA</span>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Malik Associates</span>
+        <span class="brand-sub">CMAs &amp; CAs</span>
+        <span class="brand-tagline">Trusted Financial Partner for Compliance, Growth &amp; Advisory Excellence</span>
+      </span>
+    </a>
 
-<img src="Logo.jpeg" alt="Malik Associates Logo">
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-<h1>Malik Associates</h1>
-
-<h3>CMAs & CAs</h3>
-
-<p>
-Trusted Financial Partner for Compliance, Growth & Advisory Excellence
-</p>
-
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="bars"><span></span><span></span><span></span></span>
+    </button>
+  </div>
 </header>
 
-<nav>
+<main id="main">
 
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
+  <section class="hero" id="home">
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-rule" aria-hidden="true"></div>
+      <h1>About Malik Associates</h1>
+      <p class="lead">Professional Accounting, Taxation, Audit Support and Business Advisory Services.</p>
+    </div>
+  </section>
 
-</nav>
+  <section class="values" id="about">
+    <div class="container">
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Who We Are</h3>
+          <p>Malik Associates is a professional accounting and advisory firm providing accounting, taxation, audit support, compliance and business consulting services.</p>
+          <p>We help SMEs, startups and corporate organizations achieve financial clarity, regulatory compliance and sustainable growth.</p>
+        </div>
+        <div class="value-card">
+          <h3>Our Vision</h3>
+          <p>To become a leading accounting and advisory firm recognized for excellence, innovation and trusted financial guidance.</p>
+        </div>
+        <div class="value-card">
+          <h3>Our Mission</h3>
+          <p>To provide reliable financial solutions, strategic advisory services and modern reporting systems that empower businesses to achieve long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-
-<h2>About Malik Associates</h2>
-
-<p>
-Professional Accounting, Taxation, Audit Support and Business Advisory Services
-</p>
-
-</section>
-
-<div class="container">
-
-<div class="card">
-
-<h2>Who We Are</h2>
-
-<p>
-Malik Associates is a professional accounting and advisory firm providing accounting, taxation, audit support, compliance and business consulting services.
-</p>
-
-<p>
-We help SMEs, startups and corporate organizations achieve financial clarity, regulatory compliance and sustainable growth.
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Our Vision</h2>
-
-<p>
-To become a leading accounting and advisory firm recognized for excellence, innovation and trusted financial guidance.
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Our Mission</h2>
-
-<p>
-To provide reliable financial solutions, strategic advisory services and modern reporting systems that empower businesses to achieve long-term success.
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Leadership Team</h2>
-
-<p style="text-align:center;margin-bottom:20px;">
-Click on any partner profile to view education and professional highlights.
-</p>
-
-<div class="team-grid">
-
-<!-- Waheed -->
-
+  <section class="team-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our People</span>
+        <h2>Leadership Team</h2>
+        <p>Click on any partner profile to view education and professional highlights.</p>
+      </div>
+      <div class="team-grid">
 <div class="team-card" onclick="this.classList.toggle('flipped')">
 <div class="team-card-inner">
 
 <div class="team-card-front">
-<img src="Waheed.jpeg" alt="Waheed Ur Rehman">
+<img src="Waheed.jpeg" alt="Waheed Ur Rehman, ACMA">
 <h3>Waheed Ur Rehman, ACMA</h3>
 <p class="designation">Managing Partner</p>
 <p class="short-profile">An ACMA professional with 8+ years of experience, Waheed leads the firm's financial advisory and corporate tax practice, guiding clients through complex business decisions with strategic clarity.</p>
-<span class="flip-hint">Click to view education &amp; details →</span>
+<span class="flip-hint">Click to view education &amp; details &rarr;</span>
 </div>
 
 <div class="team-card-back">
@@ -386,23 +598,21 @@ Click on any partner profile to view education and professional highlights.
 <li>Corporate Tax Specialist</li>
 <li>Strategic Business Consultant</li>
 </ul>
-<span class="flip-hint">← Click to go back</span>
+<span class="flip-hint">&larr; Click to go back</span>
 </div>
 
 </div>
 </div>
-
-<!-- Naeem -->
 
 <div class="team-card" onclick="this.classList.toggle('flipped')">
 <div class="team-card-inner">
 
 <div class="team-card-front">
-<img src="Naeem.jpeg" alt="Naeem Akhter Malik">
+<img src="Naeem.jpeg" alt="Naeem Akhter Malik, ACA, CIA">
 <h3>Naeem Akhter Malik, ACA, CIA</h3>
 <p class="designation">Partner</p>
 <p class="short-profile">With 15+ years in audit and assurance, Naeem strengthens client governance through rigorous internal controls and risk management frameworks.</p>
-<span class="flip-hint">Click to view education &amp; details →</span>
+<span class="flip-hint">Click to view education &amp; details &rarr;</span>
 </div>
 
 <div class="team-card-back">
@@ -416,23 +626,21 @@ Click on any partner profile to view education and professional highlights.
 <li>Internal Controls &amp; Risk Management Specialist</li>
 <li>Corporate Governance Consultant</li>
 </ul>
-<span class="flip-hint">← Click to go back</span>
+<span class="flip-hint">&larr; Click to go back</span>
 </div>
 
 </div>
 </div>
-
-<!-- Akhter -->
 
 <div class="team-card" onclick="this.classList.toggle('flipped')">
 <div class="team-card-inner">
 
 <div class="team-card-front">
-<img src="Akhter.jpeg" alt="Akhter Rasul">
+<img src="Akhter.jpeg" alt="Akhter Rasul, CPA">
 <h3>Akhter Rasul, CPA</h3>
 <p class="designation">Partner</p>
 <p class="short-profile">Akhter brings 15+ years of expertise in financial reporting, tax planning, and process improvement to every client engagement.</p>
-<span class="flip-hint">Click to view education &amp; details →</span>
+<span class="flip-hint">Click to view education &amp; details &rarr;</span>
 </div>
 
 <div class="team-card-back">
@@ -446,23 +654,21 @@ Click on any partner profile to view education and professional highlights.
 <li>Tax Planning &amp; Advisory Specialist</li>
 <li>Business Process Improvement Consultant</li>
 </ul>
-<span class="flip-hint">← Click to go back</span>
+<span class="flip-hint">&larr; Click to go back</span>
 </div>
 
 </div>
 </div>
-
-<!-- Mansoor -->
 
 <div class="team-card" onclick="this.classList.toggle('flipped')">
 <div class="team-card-inner">
 
 <div class="team-card-front">
-<img src="Mansoor.jpeg" alt="Mansoor Akhter">
+<img src="Mansoor.jpeg" alt="Mansoor Akhter, CPA, CMA">
 <h3>Mansoor Akhter, CPA, CMA</h3>
 <p class="designation">Partner</p>
 <p class="short-profile">Mansoor specializes in management accounting, financial analysis, and budgeting, helping businesses translate numbers into performance.</p>
-<span class="flip-hint">Click to view education &amp; details →</span>
+<span class="flip-hint">Click to view education &amp; details &rarr;</span>
 </div>
 
 <div class="team-card-back">
@@ -476,23 +682,21 @@ Click on any partner profile to view education and professional highlights.
 <li>Financial Analysis &amp; Budgeting Expert</li>
 <li>Business Performance Consultant</li>
 </ul>
-<span class="flip-hint">← Click to go back</span>
+<span class="flip-hint">&larr; Click to go back</span>
 </div>
 
 </div>
 </div>
-
-<!-- Azeem -->
 
 <div class="team-card" onclick="this.classList.toggle('flipped')">
 <div class="team-card-inner">
 
 <div class="team-card-front">
-<img src="Azeem.jpeg" alt="Azeem Ullah">
+<img src="Azeem.jpeg" alt="Azeem Ullah, FCA">
 <h3>Azeem Ullah, FCA</h3>
 <p class="designation">Senior Partner &amp; Director Public Sector</p>
 <p class="short-profile">A Fellow Chartered Accountant, Azeem leads the firm's public sector advisory practice, specializing in government audit, compliance, and institutional development.</p>
-<span class="flip-hint">Click to view education &amp; details →</span>
+<span class="flip-hint">Click to view education &amp; details &rarr;</span>
 </div>
 
 <div class="team-card-back">
@@ -506,23 +710,21 @@ Click on any partner profile to view education and professional highlights.
 <li>Financial Governance Consultant</li>
 <li>Strategic Policy &amp; Institutional Development Advisor</li>
 </ul>
-<span class="flip-hint">← Click to go back</span>
+<span class="flip-hint">&larr; Click to go back</span>
 </div>
 
 </div>
 </div>
-
-<!-- Saqib -->
 
 <div class="team-card" onclick="this.classList.toggle('flipped')">
 <div class="team-card-inner">
 
 <div class="team-card-front">
-<img src="Saqib.jpeg" alt="Saqib Aneel">
+<img src="Saqib.jpeg" alt="Saqib Aneel, FCA">
 <h3>Saqib Aneel, FCA</h3>
 <p class="designation">Partner</p>
 <p class="short-profile">With 16+ years in audit and corporate finance, Saqib advises clients on regulatory compliance and tax strategy across diverse industries.</p>
-<span class="flip-hint">Click to view education &amp; details →</span>
+<span class="flip-hint">Click to view education &amp; details &rarr;</span>
 </div>
 
 <div class="team-card-back">
@@ -536,34 +738,116 @@ Click on any partner profile to view education and professional highlights.
 <li>Corporate Finance &amp; Tax Advisory Expert</li>
 <li>Regulatory Compliance Consultant</li>
 </ul>
-<span class="flip-hint">← Click to go back</span>
+<span class="flip-hint">&larr; Click to go back</span>
 </div>
 
 </div>
 </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+</main>
 
-</div>
-
-
-</div>
-
-<footer>
-
-<h3>Malik Associates CMAs & CAs</h3>
-
-<p>📧 Admin@MalikAssociates.com</p>
-
-<p>📞 +92 320 5515 000</p>
-
-<p>📍 Wah Cantt | Islamabad | Rawalpindi | Dubai</p>
-
-<br>
-
-<p>© 2026 Malik Associates. All Rights Reserved.</p>
-
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-name">Malik Associates</span>
+        <span class="brand-sub">CMAs &amp; CAs</span>
+        <p>Trusted Financial Partner for Compliance, Growth &amp; Advisory Excellence. Serving clients across Pakistan and the UAE.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@malikassociates.com">info@malikassociates.com</a></li>
+            <li><a href="tel:+923205515000">+92 320-5515-000</a></li>
+            <li><a href="https://www.malikassociates.com" target="_blank" rel="noopener">www.malikassociates.com</a></li>
+            <li><a href="https://wa.me/971558605398" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="currentYear">2026</span> Malik Associates. All Rights Reserved.</span>
+      <span class="credentials">Malik Associates CMAs &amp; CAs</span>
+    </div>
+  </div>
 </footer>
 
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Logo fallback ---------- */
+  var logoImg = document.querySelector(".brand-logo img");
+  var logoFallback = document.querySelector(".brand-logo .logo-fallback");
+  if (logoImg) {
+    logoImg.addEventListener("error", function () {
+      logoImg.style.display = "none";
+      if (logoFallback) { logoFallback.style.display = "flex"; }
+    });
+  }
+
+  /* ---------- Sticky header shadow on scroll ---------- */
+  var header = document.querySelector(".site-header");
+  function onScroll() {
+    if (!header) return;
+    if (window.scrollY > 12) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Mobile nav toggle ---------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var mainNav = document.querySelector(".main-nav");
+
+  function closeMobileNav() {
+    if (!mainNav || !navToggle) return;
+    mainNav.classList.remove("open");
+    navToggle.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener("click", function () {
+      var isOpen = mainNav.classList.toggle("open");
+      navToggle.classList.toggle("open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMobileNav();
+      });
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 860) { closeMobileNav(); }
+    });
+  }
+
+  /* ---------- Footer year ---------- */
+  var yearEl = document.getElementById("currentYear");
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+})();
+
+
+</script>
+<a href="https://wa.me/971558605398" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.97 0.8 5.74 2.2 8.12L0.4 31.6c-0.07 0.27 0.17 0.52 0.44 0.45l7.7-2.02C10.78 31.27 13.32 32 16 32c8.84 0 16-7.16 16-16S24.84 0 16 0z M16 29.5c-2.43 0-4.7-0.66-6.65-1.81l-0.48-0.28-4.95 1.3 1.32-4.82-0.31-0.5A12.94 12.94 0 0 1 3.06 16C3.06 8.86 8.86 3.06 16 3.06S28.94 8.86 28.94 16 23.14 28.94 16 28.94z" fill="#ffffff"/><path d="M22.4 18.66c-0.34-0.17-2-0.98-2.31-1.1-0.31-0.11-0.54-0.17-0.76 0.17-0.23 0.34-0.87 1.1-1.07 1.32-0.2 0.23-0.39 0.25-0.73 0.08-0.34-0.17-1.42-0.52-2.7-1.66-1-0.88-1.67-1.97-1.87-2.3-0.2-0.34-0.02-0.52 0.15-0.7 0.15-0.15 0.34-0.39 0.51-0.59 0.17-0.2 0.23-0.34 0.34-0.57 0.11-0.23 0.06-0.42-0.06-0.59-0.11-0.17-0.62-1.5-0.85-2.05-0.22-0.54-0.45-0.46-0.62-0.47-0.16-0.01-0.35-0.01-0.54-0.01-0.18 0-0.48 0.07-0.74 0.34-0.25 0.27-0.97 0.95-0.97 2.31 0 1.36 0.99 2.68 1.13 2.87 0.14 0.18 1.94 2.96 4.7 4.03 2.33 0.91 2.8 0.73 3.3 0.68 0.5-0.05 1.63-0.67 1.86-1.31 0.23-0.65 0.23-1.2 0.16-1.32-0.07-0.11-0.26-0.18-0.6-0.35z" fill="#ffffff"/></svg>WhatsApp Us</a>
 </body>
 </html>
